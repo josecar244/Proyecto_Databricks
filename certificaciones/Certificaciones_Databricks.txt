@@ -1,0 +1,3 @@
+Databricks Fundamentals: https://credentials.databricks.com/2dbdc191-c750-4376-903a-31f6193525ac#acc.cZw9rA3y
+Generative AI Fundamentals: https://credentials.databricks.com/07f8c5de-ae2f-434b-817a-5c3939f65fe1#acc.nzRZbLph
+Platform Administrator: https://credentials.databricks.com/97997a22-6dd7-42ae-856c-2f0c695c6de3#acc.kbHSQXcG
