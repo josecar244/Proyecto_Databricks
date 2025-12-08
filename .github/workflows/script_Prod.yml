@@ -23,9 +23,9 @@ jobs:
         ORIGIN_TOKEN=${{ secrets.DATABRICKS_ORIGIN_TOKEN }}
         NOTEBOOK_PATHS=(
           "/Workspace/Users/josecar2447@outlook.com/Proyecto_Databricks/scripts/Preparacion_Catalogo" 
-          "/Workspace/Users/josecar2447@outlook.com/Proyecto_Databricks/proceso/1. raw_to_bronze" 
-          "/Workspace/Users/josecar2447@outlook.com/Proyecto_Databricks/proceso/2. bronze_to_silver" 
-          "/Workspace/Users/josecar2447@outlook.com/Proyecto_Databricks/proceso/3. silver_to_golden" 
+          "/Workspace/Users/josecar2447@outlook.com/Proyecto_Databricks/proceso/1_raw_to_bronze" 
+          "/Workspace/Users/josecar2447@outlook.com/Proyecto_Databricks/proceso/2_bronze_to_silver" 
+          "/Workspace/Users/josecar2447@outlook.com/Proyecto_Databricks/proceso/3_silver_to_golden" 
           "/Workspace/Users/josecar2447@outlook.com/Proyecto_Databricks/seguridad/Grants"
           "/Workspace/Users/josecar2447@outlook.com/Proyecto_Databricks/reversion/Revoke"
         )
@@ -180,7 +180,7 @@ jobs:
               "task_key": "2_Raw_to_Bronze",
               "description": "Copia los datos del esquema raw al bronze",
               "notebook_task": {
-                "notebook_path": "$DEST_BASE/1. raw_to_bronze",
+                "notebook_path": "$DEST_BASE/1_raw_to_bronze",
                 "source": "WORKSPACE",
                 "base_parameters": {
                   "catalogo": "final_project_flights",
@@ -202,7 +202,7 @@ jobs:
               "task_key": "3_Bronze_to_Silver",
               "description": "Transforma los datos del esquema bronze al silver",
               "notebook_task": {
-                "notebook_path": "$DEST_BASE/2. bronze_to_silver",
+                "notebook_path": "$DEST_BASE/2_bronze_to_silver",
                 "source": "WORKSPACE"
               },
               "existing_cluster_id": "$CLUSTER_ID",
@@ -218,7 +218,7 @@ jobs:
               "task_key": "4_Silver_to_Golden",
               "description": "Agrupa los datos del esquema silver al golden",
               "notebook_task": {
-                "notebook_path": "$DEST_BASE/3. silver_to_golden",
+                "notebook_path": "$DEST_BASE/3_silver_to_golden",
                 "source": "WORKSPACE"
               },
               "existing_cluster_id": "$CLUSTER_ID",
