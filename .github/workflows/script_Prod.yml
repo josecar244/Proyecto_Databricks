@@ -39,7 +39,7 @@ jobs:
             --output "notebooks_to_deploy/$filename"
         done
         echo "✅ Exportación completada. Archivos listos:"
-        ls -l artifacts/
+        ls -l notebooks_to_deploy/
     
     # -------------------------------------------------------------------------
     # PASO 2: DESPLEGAR EN PRODUCCIÓN (Carpeta: Proyecto_Flights)
