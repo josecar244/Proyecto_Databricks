@@ -33,14 +33,14 @@ ruta_flights = f"abfss://{container}@{storage_name}.dfs.core.windows.net/raw/fli
 # COMMAND ----------
 
 df_airlines = spark.read.option("header", True).option("inferSchema", True).csv(ruta_airlines)
-df_airlines.write.mode("overrite").saveAsTable(f"{catalogo}.{esquema}.airlines")
+df_airlines.write.mode("overwrite").saveAsTable(f"{catalogo}.{esquema}.airlines")
 
 # COMMAND ----------
 
 df_airports = spark.read.option("header", True).option("inferSchema", True).csv(ruta_airports)\
                         .withColumn("LATITUDE", col("LATITUDE").cast("string")) \
                         .withColumn("LONGITUDE", col("LONGITUDE").cast("string"))
-df_airports.write.mode("overrite").saveAsTable(f"{catalogo}.{esquema}.airports")
+df_airports.write.mode("overwrite").saveAsTable(f"{catalogo}.{esquema}.airports")
 
 # COMMAND ----------
 
