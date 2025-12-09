@@ -36,7 +36,7 @@ jobs:
           curl -s -n -X GET \
             -H "Authorization: Bearer $ORIGIN_TOKEN" \
             "$ORIGIN_HOST/api/2.0/workspace/export?path=$nb_path&format=SOURCE&direct_download=true" \
-            --output "notebooks_to_deploy/$filename"
+            --output "notebooks_to_deploy/$filename.py"
         done
         echo "✅ Exportación completada. Archivos listos:"
         ls -l notebooks_to_deploy/
