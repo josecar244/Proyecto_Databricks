@@ -27,10 +27,9 @@ catalogo
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC -- DROP TABLES
-# MAGIC DROP TABLE IF EXISTS ${catalogo}.bronze.airlines;
-# MAGIC DROP TABLE IF EXISTS ${catalogo}.bronze.airports;
-# MAGIC DROP TABLE IF EXISTS ${catalogo}.bronze.flights;
+# MAGIC DROP TABLE IF EXISTS IDENTIFIER('${catalogo}.bronze.airlines');
+# MAGIC DROP TABLE IF EXISTS IDENTIFIER('${catalogo}.bronze.airports');
+# MAGIC DROP TABLE IF EXISTS IDENTIFIER('${catalogo}.bronze.flights');
 
 # COMMAND ----------
 
@@ -47,9 +46,8 @@ dbutils.fs.rm(f"{ruta}/bronze/flights", True)
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC -- DROP TABLES
-# MAGIC DROP TABLE IF EXISTS ${catalogo}.silver.airports_silver;
-# MAGIC DROP TABLE IF EXISTS ${catalogo}.silver.flights_silver;
+# MAGIC DROP TABLE IF EXISTS IDENTIFIER('${catalogo}.silver.airports_silver');
+# MAGIC DROP TABLE IF EXISTS IDENTIFIER('${catalogo}.silver.flights_silver');
 
 # COMMAND ----------
 
@@ -65,11 +63,10 @@ dbutils.fs.rm(f"{ruta}/silver/flights", True)
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC -- DROP TABLES
-# MAGIC DROP TABLE IF EXISTS ${catalogo}.golden.TM_TIEMPO;
-# MAGIC DROP TABLE IF EXISTS ${catalogo}.golden.TM_AIRPORTS;
-# MAGIC DROP TABLE IF EXISTS ${catalogo}.golden.RPT_RESUMEN_VUELOS_DIARIO;
-# MAGIC DROP TABLE IF EXISTS ${catalogo}.golden.TR_PERFORMANCE_RUTA;
+# MAGIC DROP TABLE IF EXISTS IDENTIFIER('${catalogo}.golden.TM_TIEMPO');
+# MAGIC DROP TABLE IF EXISTS IDENTIFIER('${catalogo}.golden.TM_AIRPORTS');
+# MAGIC DROP TABLE IF EXISTS IDENTIFIER('${catalogo}.golden.RPT_RESUMEN_VUELOS_DIARIO');
+# MAGIC DROP TABLE IF EXISTS IDENTIFIER('${catalogo}.golden.TR_PERFORMANCE_RUTA');
 
 # COMMAND ----------
 
