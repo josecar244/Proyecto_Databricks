@@ -80,7 +80,7 @@ df_flights_daily = df_flights_base.withColumn(
 df_daily_summary = df_flights_daily.groupBy(
     col("DATE_KEY"),
     col("SCHEDULED_DATE"),
-    col("AIRLINE"),
+    col("AIRLINE_NAME").alias("AIRLINE"),
     col("MAYOR_CAUSA_RETRASO")
 ).agg(
     count("*").alias("TOTAL_FLIGHTS"),
@@ -127,7 +127,7 @@ df_flights_route = df_flights_route.withColumn(
 
 df_route_performance = df_flights_route.groupBy(
     col("YEAR_MONTH"),
-    col("AIRLINE"),
+    col("AIRLINE_NAME").alias("AIRLINE"),
     col("ORIGIN_AIRPORT"),
     col("DESTINATION_AIRPORT"),
     col("TIPO_RUTA") # Agrupamiento por la nueva dimensión
