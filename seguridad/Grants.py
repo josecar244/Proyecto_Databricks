@@ -21,4 +21,4 @@
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC REVOKE USE SCHEMA ON SCHEMA final_project_flights.golden.rpt_resumen_vuelos_diario TO `josecar244@gmail.com`;
+# MAGIC REVOKE USE SCHEMA ON SCHEMA final_project_flights.golden.rpt_resumen_vuelos_diario FROM `josecar244@gmail.com`;
