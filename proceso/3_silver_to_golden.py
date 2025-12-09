@@ -40,7 +40,8 @@ df_time = df_time.withColumn("DATE_KEY", date_format(col("date"), "yyyyMMdd").ca
                  .withColumn("MONTH", month(col("date"))) \
                  .withColumn("QUARTER", quarter(col("date"))) \
                  .withColumn("YEAR", year(col("date"))) \
-                 .withColumnRenamed("date", "FULL_DATE")
+                 .withColumn("FULL_DATE", col("date").cast("date")) \
+                 .drop("date")
 
 # COMMAND ----------
 
