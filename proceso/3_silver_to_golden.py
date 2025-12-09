@@ -84,7 +84,7 @@ df_daily_summary = df_flights_daily.groupBy(
     col("MAYOR_CAUSA_RETRASO")
 ).agg(
     count("*").alias("TOTAL_FLIGHTS"),
-    sum(col("DISTANCE")).alias("TOTAL_DISTANCE_MILES"),
+    sum(col("DISTANCE")).cast("double").alias("TOTAL_DISTANCE_MILES"),
     sum(col("CANCELLED")).alias("TOTAL_CANCELLED"),
     sum(col("DIVERTED")).alias("TOTAL_DIVERTED"),
     round(avg(col("DEPARTURE_DELAY")), 2).alias("AVG_DEPARTURE_DELAY_MIN"),
