@@ -1,5 +1,5 @@
 # Databricks notebook source
-from pyspark.sql.functions import sequence, explode, date_trunc, dayofweek, year, month, dayofmonth, weekofyear, quarter, date_format, min, max, col, col, count, sum, avg, round, when, to_date, date_format, lit, expr, greatest
+from pyspark.sql.functions import sequence, explode, date_trunc, dayofweek, year, month, dayofmonth, weekofyear, quarter, date_format, min, max, col, col, count, sum, avg, round, when, to_date, date_format, lit, expr, greatest,coalesce
 from pyspark.sql.types import DateType
 from datetime import timedelta, date
 
