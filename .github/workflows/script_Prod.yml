@@ -258,15 +258,13 @@ jobs:
               "max_retries": 2,
               "run_if": "AT_LEAST_ONE_FAILED",
               "depends_on": [
-                {
                   { "task_key": "1_Preparacion" },
                   { "task_key": "2_Raw_to_Bronze" },
                   { "task_key": "3_Bronze_to_Silver" },
                   { "task_key": "4_Silver_to_Golden" },
                   { "task_key": "5_Grants" }
-                }
-              ],
-              "max_concurrent_runs": 1
+                
+              ]
             }
           ],
           "schedule": {
