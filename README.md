@@ -16,9 +16,10 @@
 ## **🏛️ Arquitectura**
 
 El flujo de datos sigue el patrón Medallion, garantizando la calidad progresiva de los datos.
+![Flujo ETL](proceso/ETL.png)
 
 ### **Flujo de Datos**
-
+```
 📄 Origen CSV (Raw Data)  
 ↓  
 🥉 Bronze Layer (Ingesta de vuelos, aeropuertos y aerolíneas)  
@@ -28,7 +29,7 @@ El flujo de datos sigue el patrón Medallion, garantizando la calidad progresiva
 🥇 Golden Layer (Agregaciones de Vuelos y KPIs)  
 ↓  
 📊 Consumo BI (Power BI)
-
+```
 ### **📦 Capas del Pipeline**
 
 #### **🥉 Bronze Layer**
@@ -63,26 +64,31 @@ Tablas:
 * ✅ Inclusión de la corrección explícita de tipos de datos.
 
 ## **📁 Estructura del Proyecto**
-
-Proyecto\_Databricks/  
-│  
-├── 📂 .github/  
-│   └── 📂 workflows/  
-│       └── 📄 script\_Prod.yml            \# Pipeline CI/CD: Despliega y orquesta el Job WF\_ADB  
-├── 📂 certificaciones/  
-│   └── 📄 Certificaciones\_Databricks.txt  \# Documentación o evidencia de certificaciones.  
-├── 📂 proceso/  
-│   ├── 🐍 1\_raw\_to\_bronze.py            \# Tarea 2: Ingesta de datos crudos (Bronze Layer).  
-│   ├── 🐍 2\_bronze\_to\_silver.py         \# Tarea 3: Limpieza y enriquecimiento (Silver Layer).  
-│   └── 🐍 3\_silver\_to\_golden.py         \# Tarea 4: Agregación de KPIs y Reportes (Gold Layer).  
-├── 📂 reversion/  
-│   └── 🐍 Revoke.py                     \# Tarea 6: Revoca permisos (Lógica de Fallback/Mitigación de Fallos).  
-├── 📂 scripts/  
-│   └── 🐍 Preparacion\_Catalogo.py       \# Tarea 1: Crea Catálogo, Esquemas y configura Unity Catalog.  
-├── 📂 seguridad/  
-│   └── 🐍 Grants.py                     \# Tarea 5: Otorga permisos SELECT a grupos de consumo (Golden Layer).  
-├── 📄 Job\_Flights\_Completo.png          \# Diagrama del Workflow de Databricks Jobs (WF\_ADB).  
+```
+Proyecto_Databricks/
+│
+├── 📂 .github/
+│   └── 📂 workflows/
+│       └── 📄 script_Prod.yml             # Pipeline CI/CD: Despliega y orquesta el Job WF_ADB
+├── 📂 certificaciones/
+│   └── 📄 Certificaciones_Databricks.txt  # Documentación o evidencia de certificaciones
+├── 📂 dashboards/
+│   └── 📊 Dashboard_Flights.pbix          # Dashboard de Power BI para vuelos
+├── 📂 proceso/
+│   ├── 🐍 1_raw_to_bronze.py              # Tarea 2: Ingreso de datos crudos (Bronze Layer)
+│   ├── 🐍 2_bronze_to_silver.py           # Tarea 3: Limpieza y enriquecimiento (Silver Layer)
+│   ├── 🐍 3_silver_to_golden.py           # Tarea 4: Agregación de KPIs y Reportes (Gold Layer)
+│   ├── 🖼️ ETL.png                       # Diagrama de flujo del proceso ETL
+│   └── 🖼️ Job_Flights_Completo.png      # Diagrama del Workflow de Databricks Jobs (WF_ADB)
+├── 📂 reversion/
+│   └── 🐍 Revoke.py                       # Tarea 6: Revoca permisos (Lógica de Fallback)
+├── 📂 scripts/
+│   └── 🐍 Preparacion_Catalogo.py         # Tarea 1: Crea Catálogo, Esquemas y configura Unity Catalog
+├── 📂 seguridad/
+│   └── 🐍 Grants.py                       # Tarea 5: Otorga permisos SELECT a grupos de consumo (Golden Layer)
 └── 📄 README.md
+```
+![Job de Vuelos Completo](proceso/Job_Flights_Completo.png)
 
 ## **🛠️ Tecnologías**
 
